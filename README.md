@@ -28,7 +28,7 @@ Live site:  ```https://calcmasterr.netlify.app/```
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/calc-master.git
+git clone https://github.com/avinashsaroj01/CalcMaster.git
 cd calc-master
 open index.html
 ```
