@@ -1,61 +1,88 @@
-body
-{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container
-{
-    width: 320px;
-	height: 525px;
-	background-color: #000000;
-	margin: 20px auto;
-	border-radius: 10px;
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-.display_container
-{
-    height: 100px;
-    background: #1c1c1c;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 320px; /* Ensure the width is fixed to fit screen */
 }
 
-.display_one, .display_two
-{
+h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.display_container {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    font-size: 24px;
     text-align: right;
-	padding: 10px;
-	font-size: 30px;
-	color: grey;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.keypad_container
-{
-    height: 425px;
+.display_one, .display_two {
+    min-height: 30px;
+    overflow: hidden;
+}
+
+.keypad_container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
+    grid-template-columns: repeat(4, 1fr); /* Ensure 4 buttons per row */
+    gap: 10px;
 }
 
-.operator, .number, .blank, .decimal{
-	width: 50px;
-	height: 50px;
-	margin: 15px;
-	border-radius: 50%;
-	border-width: 0;
-	font-weight: bold;
-	font-size: 15px;
-    outline: none;
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    transition: background-color 0.3s;
 }
 
-.operator:hover, .number:hover, .decimal:hover
-{
-    box-shadow: 3px 3px 20px #575757, 
-             -3px -3px 20px #757575;
-             
+button:hover {
+    background-color: #555;
 }
 
-.blank
-{
-    background: #000000;
+button.operator {
+    background-color: orange;
+}
+
+button.blank {
+    visibility: hidden;
+}
+
+button:active {
+    background-color: #666;
+}
+
+@media (max-width: 360px) {
+    .container {
+        width: 100%; /* Makes the calculator fit small screens */
+        padding: 15px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 16px;
+    }
 }
